@@ -44,7 +44,6 @@ def checkImages(request):
             'imageUrl':imageUrl,
             'signatureUrl':signatureUrl,
             'SUCCESS':success,
-            # 'request':request.data,
         }
 
         
