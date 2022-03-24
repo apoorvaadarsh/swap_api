@@ -6,11 +6,11 @@ import urllib.request
 import matplotlib.pyplot as plt
 import imutils
 
-imagePath_face = "images\DG.jpeg"
-imagePath_sign = "images\DG_sign.jpeg"
+# imagePath_face = "images\DG.jpeg"
+# imagePath_sign = "images\DG_sign.jpeg"
 
-image_face = cv2.imread(imagePath_face)
-image_sign = cv2.imread(imagePath_sign)
+# image_face = cv2.imread(imagePath_face)
+# image_sign = cv2.imread(imagePath_sign)
 
 class Helper():
     def __init__(self):
@@ -163,9 +163,9 @@ class Helper():
         urllib.request.urlretrieve(url,"./images/temp.jpg")
         
 
-models = Helper()
-url = "https://firebasestorage.googleapis.com/v0/b/dsc-club-management-app.appspot.com/o/Yash%20Srivastava.jpg?alt=media&token=1c80a8cf-25c5-4b52-8902-08f7596a8f01"
-models.download_img(url)
-models.find_face("./images/temp.jpg")
-#models.convert_sign(image_sign)
-models.sign_extract()
+# models = Helper()
+# url = "https://firebasestorage.googleapis.com/v0/b/dsc-club-management-app.appspot.com/o/Yash%20Srivastava.jpg?alt=media&token=1c80a8cf-25c5-4b52-8902-08f7596a8f01"
+# models.download_img(url)
+# models.find_face("./images/temp.jpg")
+# #models.convert_sign(image_sign)
+# models.sign_extract()
