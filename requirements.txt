@@ -1,0 +1,6 @@
+Django==4.0.3
+djangorestframework==3.13.1
+imutils==0.5.4
+matplotlib==3.5.1
+numpy==1.22.3
+skimage==0.0
