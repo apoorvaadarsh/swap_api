@@ -10,45 +10,45 @@ STATIC_IMAGE_PATH = "./images/temp.jpg"
 
 @api_view(['POST'])
 def checkImages(request):
-        imageUrl=request.data['imageUrl']
+        faceUrl=request.data['faceUrl']
         signatureUrl=request.data['signatureUrl']
         face_found,signature_found = False,False
-        newFace,newSign=imageUrl,signatureUrl
+        newFace,newSign=faceUrl,signatureUrl
 
         model_helper = Helper()
         
-        model_helper.download_img(imageUrl)
+        model_helper.download_img(faceUrl)
         
         if model_helper.find_face(STATIC_IMAGE_PATH) == True :
             face_found=True
         else:
             signature_found=True
-            newSign,newFace=imageUrl,signatureUrl
+            newSign,newFace=faceUrl,signatureUrl
         
         
         model_helper.download_img(signatureUrl)
         if model_helper.find_face(STATIC_IMAGE_PATH) == True :
             face_found=True
-            newSign,newFace=imageUrl,signatureUrl
+            newSign,newFace=faceUrl,signatureUrl
             
         else:
             signature_found=True
             
 
         print(face_found,signature_found,36)    
-        imageUrl,signatureUrl=newFace,newSign
+        faceUrl,signatureUrl=newFace,newSign
         # if face_found == False :
         success=(face_found and signature_found)
         
         response={
-            'imageUrl':imageUrl,
+            'faceUrl':faceUrl,
             'signatureUrl':signatureUrl,
             'SUCCESS':success,
         }
 
         
         if(not success):
-            response['imageUrl']=request.data['imageUrl']
+            response['faceUrl']=request.data['faceUrl']
             response['signatureUrl']=request.data['signatureUrl']
         
         
